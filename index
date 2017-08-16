@@ -1,81 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="test">
-    <meta name="author" content="=)">
-    <title>Testing Bookmarks</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styling.css" rel="stylesheet">
-  </head>
+//listen for form submit
+document.getElementById('saleForm').addEventListener('submit', saveSale);
+function saveSale(a){
+//get form values
+	var firstName = document.getElementById('firstName').value;
+	var lastName = document.getElementById('lastName').value;
+	var address = document.getElementById('address').value;
+	var city = document.getElementById('city').value;
+	var state = document.getElementById('state').value;
+	var postalCode = document.getElementById('postalCode').value;
+    var page = {
+		name: firstName.concat(' ', lastName),
+		address: address.concat(' ', city, ' ', state, ' ', postalCode)
+	    }
+/*
+local storage
+    localStorage.setItem('test', 'Hey you!');
+	console.Log(localStorage.getItem('test'));
+	localStorage.removeItem('test');
+	console.Log(localStorage.getItem('test'));
+*/
+//test if page is null
+    if(localStorage.getItem('pages') === null){
+	//init array
+		var pages = [];
+	//add to array
+		pages.push(page);
+	//set to localStorage
+	    localStorage.setItem('pages', JSON.stringify(pages));
+	}
+	else {
+    //get pages from localStorage
+		var pages = JSON.parse(localStorage.getItem('pages'));
+	//add page to array
+	    pages.push(page);
+	//re-set to localStorage
+	    localStorage.setItem('pages', JSON.stringify(pages));    
+	}
+//prevent form from submitting
+	a.preventDefault();
+}
 
-  <body>
+/*BLOCK 1
+//GET INPUT
+var firstName = document.forms["sPage"]["firstName"];
+var firstName = document.forms["sPage"]["lastName"];
+//GET ERROR
+var fname_error = document.getElementById("fname_error");
+var lname_error = document.getElementById("lname_error");
+//SET LISTENER
+firstName.addEventListener("blur", fnameVerify, true);
+lastName.addEventListener("blur", lnameVerify, true);
+//VAL FUNC
+function Validate(){
 
-    <div class="container">
-      <div class="header clearfix">
-        <nav>
-          <ul class="nav nav-pills float-left">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
-          </ul>
-        </nav>
-        <h3 class="text-muted">Bookmark</h3>
-      </div>
+	if (firstName.value == ""){
+		firstName.style.border = "1px solid red";
+		fname_error.textContent = "First name is required";
+		firstName.focus();
+		return false
+	}
+	if (lastName.value == ""){
+		lastName.style.border = "1px solid red";
+		lname_error.textContent = "Last name is required";
+		lastName.focus();
+		return false
+	}
+}
+//EVENT HANDLER
+function fnameVerify(){
+	if (firstName.value !=""){
+		firstName.style.border = "1px solid red";
+		fname_error.innerHTML = "";
+		return true;
+	}
+}
+function lnameVerify(){
+	if (lastName.value !=""){
+		lastName.style.border = "1px solid red";
+		lname_error.innerHTML = "";
+		return true;
+	}
+}
+*/
 
-      <div class="jumbotron">
-        <h2 class="display-4">Enter Card Information</h2>
-		<form id="myForm">
-		    <div class="form-group">
-			    <label>First Name</label>
-				<input type="text" class="form-control" id="firstName" placeholder="First Name">
-			</div>
-			<div class="form-group">
-			    <label>Last Name</label>
-				<input type="text" class="form-control" id="lastName" placeholder="Last Name">
-			</div>
-			<div class="form-group">
-			    <label>Address</label>
-				<input type="text" class="form-control" id="address" placeholder="Address">
-			</div>
-			<div class="form-group">
-			    <label>City</label>
-				<input type="text" class="form-control" id="city" placeholder="City">
-			</div><div class="form-group">
-			    <label>State</label>
-				<input type="text" class="form-control" id="state" placeholder="State">
-			</div>
-			<div class="form-group">
-			    <label>Postal Code</label>
-				<input type="text" class="form-control" id="postalCode" placeholder="Postal Code">
-			</div>
-			<button type="submit" class="btn btn-primary">Confirm</button>
-		</form>
-      </div>
 
-      <div class="row marketing">
-        <div class="col-lg-12">
-            <div id="test results"></div>
-        </div>
-      </div>
 
-      <footer class="footer">
-        <p>&copy; Test 2017</p>
-      </footer>
-
-    </div>
-	<script
-			  src="https://code.jquery.com/jquery-3.2.1.js"
-			  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-			  crossorigin="anonymous"></script>
-    <script src="js/bootstrap.min.js"></script>
-	<script src="js/main.js"></script>
-  </body>
-</html>
