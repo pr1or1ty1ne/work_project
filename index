@@ -1,87 +1,83 @@
-//listen for form submit
-document.getElementById('saleForm').addEventListener('submit', saveSale);
-function saveSale(a){
-//get form values
-	var firstName = document.getElementById('firstName').value;
-	var lastName = document.getElementById('lastName').value;
-	var address = document.getElementById('address').value;
-	var city = document.getElementById('city').value;
-	var state = document.getElementById('state').value;
-	var postalCode = document.getElementById('postalCode').value;
-    var page = {
-		name: firstName.concat(' ', lastName),
-		address: address.concat(' ', city, ' ', state, ' ', postalCode)
-	    }
-/*
-local storage
-    localStorage.setItem('test', 'Hey you!');
-	console.Log(localStorage.getItem('test'));
-	localStorage.removeItem('test');
-	console.Log(localStorage.getItem('test'));
-*/
-//test if page is null
-    if(localStorage.getItem('pages') === null){
-	//init array
-		var pages = [];
-	//add to array
-		pages.push(page);
-	//set to localStorage
-	    localStorage.setItem('pages', JSON.stringify(pages));
-	}
-	else {
-    //get pages from localStorage
-		var pages = JSON.parse(localStorage.getItem('pages'));
-	//add page to array
-	    pages.push(page);
-	//re-set to localStorage
-	    localStorage.setItem('pages', JSON.stringify(pages));    
-	}
-//prevent form from submitting
-	a.preventDefault();
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="test page">
+    <meta name="author" content="=)">
+    <title>Test page</title>
+    <link href="css/styling.css" rel="stylesheet">
+  </head>
 
-/*BLOCK 1
-//GET INPUT
-var firstName = document.forms["sPage"]["firstName"];
-var firstName = document.forms["sPage"]["lastName"];
-//GET ERROR
-var fname_error = document.getElementById("fname_error");
-var lname_error = document.getElementById("lname_error");
-//SET LISTENER
-firstName.addEventListener("blur", fnameVerify, true);
-lastName.addEventListener("blur", lnameVerify, true);
-//VAL FUNC
-function Validate(){
+<body>
+    <div class="salePage">
+      <div class="navList">
+        <nav>
+          <button class="navButton">Home</button>
+		  <button class="navButton">About</button>
+		  <button class="navButton">Contact Us</button>
+        </nav>
+        <h3>Bookmark</h3>
+      </div>
 
-	if (firstName.value == ""){
-		firstName.style.border = "1px solid red";
-		fname_error.textContent = "First name is required";
-		firstName.focus();
-		return false
-	}
-	if (lastName.value == ""){
-		lastName.style.border = "1px solid red";
-		lname_error.textContent = "Last name is required";
-		lastName.focus();
-		return false
-	}
-}
-//EVENT HANDLER
-function fnameVerify(){
-	if (firstName.value !=""){
-		firstName.style.border = "1px solid red";
-		fname_error.innerHTML = "";
-		return true;
-	}
-}
-function lnameVerify(){
-	if (lastName.value !=""){
-		lastName.style.border = "1px solid red";
-		lname_error.innerHTML = "";
-		return true;
-	}
-}
-*/
+      <div class="formBlock">
+        <h2 class="headerForm">Enter Card Information</h2>
+		<form id="saleForm">
+		    <div class="formLabel">
+			    <label>First Name</label>
+				<input type="text" class="formText" id="firstName" placeholder="First Name">
+			</div>
+			<div class="formLabel">
+			    <label>Last Name</label>
+				<input type="text" class="formText" id="lastName" placeholder="Last Name">
+			</div>
+			<div class="formLabel">
+			    <label>Address</label>
+				<input type="text" class="formText" id="address" placeholder="Address">
+			</div>
+			<div class="formLabel">
+			    <label>City</label>
+				<input type="text" class="formText" id="city" placeholder="City">
+			</div>
+			<div class="formLabel">
+			    <label>State</label>
+				<input type="text" class="formText" id="state" placeholder="State">
+			</div>
+			<div class="formLabel">
+			    <label>Postal Code</label>
+				<input type="text" class="formText" id="postalCode" placeholder="Postal Code">
+			</div>
+			<button type="submit" class="submitButton">Confirm</button>
+		</form>
+      </div>
 
+      <footer class="footer">
+        <p>&copy; Mine =)</p>
+		<p>2017</p>
+      </footer>
 
-
+    </div>
+<!--MUST ENABLE BLOCK 1 IN JS
+    <div>
+	    <form method="POST" action="" onsubmit="return Validate()" name="sPage">
+		    <div>
+			    <label>First Name</label>
+		        <input type="text" name="firstName" class="formText" placeholder="First Name">
+				<div id="fname_error" class="val_error">
+				</div>
+		    </div>
+			<div>
+			    <label>Last Name</label>
+		        <input type="text" name="lastName" class="formText" placeholder="Last Name">
+				<div id="lname_error" class="val_error">
+				</div>
+		    </div>
+			<div>
+			    <input type="submit" value="Confirm" class="submitButton" name="confirm">
+			</div>
+		</form>
+	</div>
+-->
+	<script src="js/main.js"></script>
+</body>
+</html>
