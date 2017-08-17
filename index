@@ -10,6 +10,7 @@
   </head>
 
 <body>
+<!--
     <div class="salePage">
       <div class="navList">
         <nav>
@@ -25,11 +26,11 @@
 		<form id="saleForm">
 		    <div class="formLabel">
 			    <label>First Name</label>
-				<input type="text" class="formText" id="firstName" placeholder="First Name">
+				<input type="text" class="formText" id="fName" placeholder="First Name">
 			</div>
 			<div class="formLabel">
 			    <label>Last Name</label>
-				<input type="text" class="formText" id="lastName" placeholder="Last Name">
+				<input type="text" class="formText" id="lName" placeholder="Last Name">
 			</div>
 			<div class="formLabel">
 			    <label>Address</label>
@@ -57,27 +58,32 @@
       </footer>
 
     </div>
-<!--MUST ENABLE BLOCK 1 IN JS
+-->
     <div>
-	    <form method="POST" action="" onsubmit="return Validate()" name="sPage">
+	    <form method="POST" class="formBlock" action="" onsubmit="return Validate()" name="sPage">
 		    <div>
 			    <label>First Name</label>
-		        <input type="text" name="firstName" class="formText" placeholder="First Name">
-				<div id="fname_error" class="val_error">
+		        <input type="text" name="fName" class="formText" placeholder="First Name">
+				<div id="fName_error" class="val_error">
 				</div>
 		    </div>
 			<div>
 			    <label>Last Name</label>
-		        <input type="text" name="lastName" class="formText" placeholder="Last Name">
-				<div id="lname_error" class="val_error">
+		        <input type="text" name="lName" class="formText" placeholder="Last Name">
+				<div id="lName_error" class="val_error">
 				</div>
 		    </div>
+			<div>
+			    <label>Address</label>
+		        <input type="text" name="address" class="formText" placeholder="Address">
+				<div id="address_error" class="val_error">
+				</div>
 			<div>
 			    <input type="submit" value="Confirm" class="submitButton" name="confirm">
 			</div>
 		</form>
 	</div>
--->
+
 	<script src="js/main.js"></script>
 </body>
 </html>
