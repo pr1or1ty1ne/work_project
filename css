@@ -8,8 +8,8 @@
 	
 }
 .formBlock {
-	border-radius: 25px;
-    background: #00BFFF;
+    border-radius: 25px;
+    background: #AFEEEE;
     padding: 20px;
     width: 200px;
     height: 80%;
@@ -37,6 +37,11 @@ form div{
 .submitButton {
     padding: 7px;
     width: 100%;
+    background-color: #00BFFF;
+    cursor: pointer;
+}
+.submitButton:hover {
+    background-color: white;
 }
 .val_error{
     color: #FF1F1F;
