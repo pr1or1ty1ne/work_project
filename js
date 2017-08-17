@@ -45,14 +45,20 @@ local storage
 var fName = document.forms["sPage"]["fName"];
 var lName = document.forms["sPage"]["lName"];
 var address = document.forms["sPage"]["address"];
+var city = document.forms["sPage"]["city"];
+var pcode = document.forms["sPage"]["pcode"];
 //GET ERROR
 var fName_error = document.getElementById("fName_error");
 var lName_error = document.getElementById("lName_error");
 var address_error = document.getElementById("address_error");
+var city_error = document.getElementById("city_error");
+var pcode_error = document.getElementById("pcode_error");
 //SET LISTENER
 fName.addEventListener("blur", fNameVerify, true);
 lName.addEventListener("blur", lNameVerify, true);
 address.addEventListener("blur", addressVerify, true);
+city.addEventListener("blur", cityVerify, true);
+pcode.addEventListener("blur", pcodeVerify, true);
 //VAL FUNC
 function Validate(){
 
@@ -72,6 +78,18 @@ function Validate(){
 		address.style.border = "1px solid red";
 		address_error.textContent = "Address is required";
 		address.focus();
+		return false;
+	}
+                if (city.value == ""){
+		city.style.border = "1px solid red";
+		city_error.textContent = "City is required";
+		city.focus();
+		return false;
+	}
+                if (pcode.value == ""){
+		pcode.style.border = "1px solid red";
+		pcode_error.textContent = "Postal Code is required";
+		pcode.focus();
 		return false;
 	}
 }
@@ -97,7 +115,38 @@ function addressVerify(){
 		return true;
 	}
 }
+function cityVerify(){
+	if (city.value !=""){
+		city.style.border = "1px solid red";
+		city_error.innerHTML = "";
+		return true;
+	}
+}
+function pcodeVerify(){
+	if (pcode.value !=""){
+		pcode.style.border = "1px solid red";
+		pcode_error.innerHTML = "";
+		return true;
+	}
+}
 
-
-
-
+//TOTAL DIFF APPROACH
+//GOES IN <body>
+//<p>Enter a number and click OK:</p>
+//
+//<input id="id1" type="number" min="100" max="300" required>
+//<button onclick="myFunction()">OK</button>
+//
+//<p>If the number is less than 100 or greater than 300, an error message will be displayed.</p>
+//
+//<p id="demo"></p>
+//JS BELOW
+//function myFunction() {
+//    var inpObj = document.getElementById("id1);
+//        if (inpObj.checkValidity() == false) {
+//            document.getElementById("demo").innerHTML = inpObj.validationMessage;
+//        }
+//        else {
+//            document.getElementById("demo").innerHTML = "Input OK";
+//        } 
+//
