@@ -1,9 +1,5 @@
 .salePage {
-    border-radius: 25px;
-    background: #0000FF;
-    padding: 20px;
-    width: 200px;
-    height: 150px;	
+	
 }
 .navList {
 	
@@ -12,7 +8,11 @@
 	
 }
 .formBlock {
-	
+	border-radius: 25px;
+    background: #00BFFF;
+    padding: 20px;
+    width: 200px;
+    height: 80%;
 }
 .headerForm {
 	
