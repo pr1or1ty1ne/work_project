@@ -5,60 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="test page">
     <meta name="author" content="=)">
-    <title>Test page</title>
+    <title>Sale Page</title>
     <link href="css/styling.css" rel="stylesheet">
   </head>
-
 <body>
-<!--
     <div class="salePage">
-      <div class="navList">
-        <nav>
-          <button class="navButton">Home</button>
-		  <button class="navButton">About</button>
-		  <button class="navButton">Contact Us</button>
-        </nav>
-        <h3>Bookmark</h3>
-      </div>
-
-      <div class="formBlock">
-        <h2 class="headerForm">Enter Card Information</h2>
-		<form id="saleForm">
-		    <div class="formLabel">
-			    <label>First Name</label>
-				<input type="text" class="formText" id="fName" placeholder="First Name">
-			</div>
-			<div class="formLabel">
-			    <label>Last Name</label>
-				<input type="text" class="formText" id="lName" placeholder="Last Name">
-			</div>
-			<div class="formLabel">
-			    <label>Address</label>
-				<input type="text" class="formText" id="address" placeholder="Address">
-			</div>
-			<div class="formLabel">
-			    <label>City</label>
-				<input type="text" class="formText" id="city" placeholder="City">
-			</div>
-			<div class="formLabel">
-			    <label>State</label>
-				<input type="text" class="formText" id="state" placeholder="State">
-			</div>
-			<div class="formLabel">
-			    <label>Postal Code</label>
-				<input type="text" class="formText" id="postalCode" placeholder="Postal Code">
-			</div>
-			<button type="submit" class="submitButton">Confirm</button>
-		</form>
-      </div>
-
-      <footer class="footer">
-        <p>&copy; Mine =)</p>
-		<p>2017</p>
-      </footer>
-
+        <div class="formBlock">
+            <h2 class="headerForm">Enter Card Information</h2>
+            <form id="saleForm" method="post">
+                <div class="formLabel">
+                    <fieldset>
+                        <legend>Personal Information</legend>
+                            <label>First Name</label>
+                            <input type="text" class="formText" id="fName" placeholder="First Name">
+                            <label>Last Name</label>
+                            <input type="text" class="formText" id="lName" placeholder="Last Name">
+                            <label>Address</label>
+                            <input type="text" class="formText" id="address" placeholder="Address">
+                            <label>City</label>
+                            <input type="text" class="formText" id="city" placeholder="City">
+                            <label>State</label>
+                            <input type="text" class="formText" id="state" placeholder="State">
+                            <label>Postal Code</label>
+                            <input type="text" class="formText" id="postalCode" placeholder="Postal Code">
+                            <input type="submit" class="submitButton" value="Submit">
+                            <input type="reset" class="resetButton" value="Reset">
+                    </fieldset>
+                </div>
+            </form>
+            <form id="receiptForm" action="mailto:whoever@whoever.com" method="post">
+                <input type="submit" class="submitButton" value="Send Receipt">
+            </form>
+        </div>
     </div>
--->
+        <footer class="footer">
+            <p>&copy; Mine =)</p>
+            <p>2017</p>
+        </footer>
+<!--
     <div>
         <form method="POST" class="formBlock" action="" onsubmit="return Validate()" name="sPage">
             <div>
@@ -102,6 +86,7 @@
 	</div>
 		</form>
     </div>
+-->
 <script src="js/main.js"></script>
 </body>
 </html>
