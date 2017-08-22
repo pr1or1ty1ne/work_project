@@ -11,6 +11,9 @@
     width: auto;
     height: auto;
 }
+.footer {
+    position: relative;
+}
 .salePage {
     position: absolute;
     top: calc (50% - 75px);
@@ -24,7 +27,7 @@
 	
 }
 .formBlock {
-	border-radius: 25px;
+    border-radius: 25px;
     background: #00BFFF;
     padding: 20px;
     width: 200px;
