@@ -54,6 +54,9 @@ form div{
 .footer {
 	
 }
+.stateDrop {
+    padding: 0px 0px 3px 0px;
+}
 .submitButton {
     color: #fff;
     background: #1abb9c;
